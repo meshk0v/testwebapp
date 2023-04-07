@@ -91,22 +91,49 @@
         <input type="text" placeholder="email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
         <button id="order">Оформить</button>
+        <div id="error"></div>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.Webapp;
         let buy = document.getElementById("buy");
         let order = document.getElementById("order");
-
+        tg.expand();
         buy.addEventListener("click", () =>{
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name;
         });
 
-        order.addEventListener("click", () =>{
+        order.addEventListener("click", () => {
+            let name = document.getElementById("user_name").value
+            let email = document.getElementById("user_email").value
+            let phone = document.getElementById("user_phone").value
+
+            if(name.length < 5){
+                document.getElementById("error").innerText = 'Маленькое имя';
+                return;
+            }
+
+            if(email.length < 5){
+                document.getElementById("error").innerText = 'Маленький емайл';
+                return;
+            }
+
+            if(phone.length < 5){
+                document.getElementById("error").innerText = 'Маленький номер';
+                return;
+            }
+
+            let data = {
+                name: name,
+                email: email,
+                phone: phone
+            }
+
+            tg.sendDate(JSON.stringify(data));
             tg.close();
-        })
+        });
 
     </script>
 </body>
