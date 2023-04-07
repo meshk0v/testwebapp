@@ -95,10 +95,10 @@
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let tg = window.Telegram.Webapp;
+        let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy");
         let order = document.getElementById("order");
-        // tg.expand();
+        tg.expand();
         
         buy.addEventListener("click", () =>{
             document.getElementById("main").style.display = "none";
@@ -107,30 +107,30 @@
         });
 
         order.addEventListener("click", () => {
-            document.getElementById("error").innerText = '';
-            let name = document.getElementById("user_name").value;
-            let email = document.getElementById("user_email").value;
-            let phone = document.getElementById("user_phone").value;
-            if(name.length < 5){
-                document.getElementById("error").innerText = 'маленькое значение';
-                return;
-            }
-            if(email.length < 5){
-                document.getElementById("error").innerText = 'маленькое значение';
-                return;
-            }
-            if(phone.length < 5){
-                document.getElementById("error").innerText = 'маленькое значение';
-                return;
-            }
+            // document.getElementById("error").innerText = '';
+            // let name = document.getElementById("user_name").value;
+            // let email = document.getElementById("user_email").value;
+            // let phone = document.getElementById("user_phone").value;
+            // if(name.length < 5){
+            //     document.getElementById("error").innerText = 'маленькое значение';
+            //     return;
+            // }
+            // if(email.length < 5){
+            //     document.getElementById("error").innerText = 'маленькое значение';
+            //     return;
+            // }
+            // if(phone.length < 5){
+            //     document.getElementById("error").innerText = 'маленькое значение';
+            //     return;
+            // }
             
-            let data = {
-                name: name,
-                email: email,
-                phone: phone
-            }
+            // let data = {
+            //     name: name,
+            //     email: email,
+            //     phone: phone
+            // }
 
-            tg.sendData(JSON.stringify(data));
+            // tg.sendData(JSON.stringify(data));
             tg.close();
         });
 
