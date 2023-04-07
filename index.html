@@ -83,7 +83,6 @@
 <body>
     <div id="main">
         <h1>Онлайн магазин</h1>
-        <img src="https://cdn-icons-png.flaticon.com/512/3595/2595455.png">
         <p>This is cool telegram bot from me</p>
         <button id="buy">Купить</button>
     </div>
@@ -96,8 +95,8 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.telegram.Webapp;
-        let buy = document.getElementById("buy")
-        let order = document.getElementById("order")
+        let buy = document.getElementById("buy");
+        let order = document.getElementById("order");
 
         buy.addEventListener("click", () =>{
             document.getElementById("main").style.display = "none";
