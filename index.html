@@ -111,18 +111,18 @@
             let name = document.getElementById("user_name").value;
             let email = document.getElementById("user_email").value;
             let phone = document.getElementById("user_phone").value;
-            // if(name.length < 5){
-            //     document.getElementById("error").innerText = 'маленькое значение';
-            //     return;
-            // }
-            // if(email.length < 5){
-            //     document.getElementById("error").innerText = 'маленькое значение';
-            //     return;
-            // }
-            // if(phone.length < 5){
-            //     document.getElementById("error").innerText = 'маленькое значение';
-            //     return;
-            // }
+            if(name.length < 5) {
+                document.getElementById("error").innerText = 'маленькое значение1';
+                return;
+            }
+            if(email.length < 5) {
+                document.getElementById("error").innerText = 'маленькое значение2';
+                return;
+            }
+            if(phone.length < 5) {
+                document.getElementById("error").innerText = 'маленькое значение3';
+                return;
+            }
             
             let data = {
                 name: name,
